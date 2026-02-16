@@ -91,3 +91,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Modal functionality for "Vende tu auto"
+const sellCarModal = document.getElementById('sellCarModal');
+const btnVendeTuAuto = document.getElementById('btnVendeTuAuto');
+const closeModal = document.getElementById('closeModal');
+
+if (btnVendeTuAuto && sellCarModal) {
+    btnVendeTuAuto.addEventListener('click', () => {
+        sellCarModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+if (closeModal && sellCarModal) {
+    closeModal.addEventListener('click', () => {
+        sellCarModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+}
+
+// Close modal when clicking outside
+if (sellCarModal) {
+    sellCarModal.addEventListener('click', (e) => {
+        if (e.target === sellCarModal) {
+            sellCarModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Form submission success message
+const sellCarForm = document.querySelector('.sell-car-form');
+if (sellCarForm) {
+    sellCarForm.addEventListener('submit', (e) => {
+        // Netlify will handle the submission
+        // Show success message after a short delay
+        setTimeout(() => {
+            alert('¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto para ofrecerte la mejor tasación.');
+            sellCarModal.classList.remove('active');
+            document.body.style.overflow = '';
+            sellCarForm.reset();
+        }, 100);
+    });
+}

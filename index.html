@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -21,7 +22,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-icon">🚗</span>
+                <span class="logo-icon"><i class="fas fa-car"></i></span>
                 RUGGIERI <span class="logo-accent">CARS</span>
             </div>
             <ul class="nav-links" id="navLinks">
@@ -164,21 +165,21 @@
 
             <div class="servicios-grid">
                 <div class="servicio-card fade-in">
-                    <div class="servicio-icon">🚗</div>
+                    <div class="servicio-icon"><i class="fas fa-car-side"></i></div>
                     <h3>Venta de Autos Usados</h3>
                     <p>Amplio catálogo de vehículos usados en excelente estado, revisados mecánicamente y con garantía.
                         Financiación disponible con las mejores tasas del mercado.</p>
                 </div>
 
                 <div class="servicio-card fade-in">
-                    <div class="servicio-icon">💰</div>
+                    <div class="servicio-icon"><i class="fas fa-money-bill-wave"></i></div>
                     <h3>Compra de tu Auto</h3>
                     <p>¿Querés vender tu auto? Te ofrecemos la mejor tasación del mercado. Pago inmediato y trámites
                         incluidos. Aceptamos autos como parte de pago.</p>
                 </div>
 
                 <div class="servicio-card fade-in">
-                    <div class="servicio-icon">🔧</div>
+                    <div class="servicio-icon"><i class="fas fa-wrench"></i></div>
                     <h3>Taller Mecánico</h3>
                     <p>Servicio completo de reparación y mantenimiento. Mecánicos certificados, repuestos originales y
                         diagnóstico computarizado. Presupuesto sin cargo.</p>
@@ -359,6 +360,100 @@
             <p>&copy; 2026 Ruggieri Cars. Todos los derechos reservados. | Hecho con ❤️ en Paraguay</p>
         </div>
     </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="floating-btn floating-sell" id="btnVendeTuAuto" title="Vende tu auto">
+            <i class="fas fa-dollar-sign"></i>
+            <span class="btn-text">Vende tu auto</span>
+        </button>
+        <a href="https://wa.me/595981234567?text=Hola!%20Me%20gustaría%20obtener%20más%20información"
+            class="floating-btn floating-whatsapp" target="_blank" title="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="btn-text">WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Sell Your Car Modal -->
+    <div class="modal" id="sellCarModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2><i class="fas fa-car"></i> Vende tu Auto</h2>
+            <p class="modal-subtitle">Completa el formulario y te contactaremos para ofrecerte la mejor tasación</p>
+
+            <form name="vende-tu-auto" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                class="sell-car-form">
+                <input type="hidden" name="form-name" value="vende-tu-auto">
+                <p style="display:none">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-car-side"></i> Datos del Vehículo</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="marca">Marca *</label>
+                            <input type="text" id="marca" name="marca" required placeholder="Ej: Toyota">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelo">Modelo *</label>
+                            <input type="text" id="modelo" name="modelo" required placeholder="Ej: Corolla">
+                        </div>
+                        <div class="form-group">
+                            <label for="año">Año *</label>
+                            <input type="number" id="año" name="año" required min="1980" max="2026"
+                                placeholder="Ej: 2018">
+                        </div>
+                        <div class="form-group">
+                            <label for="color">Color *</label>
+                            <input type="text" id="color" name="color" required placeholder="Ej: Blanco">
+                        </div>
+                        <div class="form-group">
+                            <label for="kilometraje">Kilometraje (km) *</label>
+                            <input type="number" id="kilometraje" name="kilometraje" required placeholder="Ej: 50000">
+                        </div>
+                        <div class="form-group">
+                            <label for="transmision">Transmisión *</label>
+                            <select id="transmision" name="transmision" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="Manual">Manual</option>
+                                <option value="Automática">Automática</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Tus Datos de Contacto</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="+595 981 234 567">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="mensaje">Mensaje Adicional (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                placeholder="Cuéntanos más sobre tu vehículo..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                </button>
+            </form>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/cms-loader.js"></script>
