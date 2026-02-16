@@ -4,10 +4,10 @@
 function parseFrontMatter(content) {
     const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
     if (!match) return null;
-    
+
     const frontMatter = {};
     const lines = match[1].split('\n');
-    
+
     lines.forEach(line => {
         const [key, ...valueParts] = line.split(':');
         if (key && valueParts.length) {
@@ -15,7 +15,7 @@ function parseFrontMatter(content) {
             frontMatter[key.trim()] = value;
         }
     });
-    
+
     return {
         data: frontMatter,
         content: match[2]
@@ -27,7 +27,7 @@ async function loadVehiculos() {
     try {
         const vehiculosGrid = document.getElementById('vehiculosGrid');
         const selectVehiculo = document.getElementById('vehiculo');
-        
+
         if (!vehiculosGrid) return;
 
         // Vehículos de ejemplo (en producción estos vendrían de archivos .md)
@@ -184,9 +184,15 @@ async function loadVehiculos() {
             </div>
         `).join('');
 
+        // Hacer visibles los vehículos cargados
+        const vehiculoCards = document.querySelectorAll('.vehiculo-card');
+        vehiculoCards.forEach(card => {
+            card.classList.add('visible');
+        });
+
         // Event listeners para botones de consulta
         document.querySelectorAll('.btn-consultar').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const vehiculo = this.dataset.vehiculo;
                 const whatsapp = '595981234567'; // Cambiar por número real
                 const mensaje = encodeURIComponent(
@@ -199,7 +205,7 @@ async function loadVehiculos() {
         // Filtros
         const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 // Remover active de todos
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
@@ -271,6 +277,12 @@ async function loadBlogPosts() {
                 </div>
             </article>
         `).join('');
+
+        // Hacer visibles los posts del blog cargados
+        const blogCards = document.querySelectorAll('.blog-card');
+        blogCards.forEach(card => {
+            card.classList.add('visible');
+        });
 
     } catch (error) {
         console.error('Error cargando blog:', error);
