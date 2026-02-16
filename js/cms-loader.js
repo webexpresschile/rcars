@@ -33,6 +33,7 @@ async function loadVehiculos() {
         // Vehículos de ejemplo (en producción estos vendrían de archivos .md)
         const vehiculos = [
             {
+                id: "toyota-corolla-2018",
                 marca: "Toyota",
                 modelo: "Corolla XEi",
                 year: 2018,
@@ -49,6 +50,7 @@ async function loadVehiculos() {
                 estado: "Disponible"
             },
             {
+                id: "honda-civic-2020",
                 marca: "Honda",
                 modelo: "Civic EX",
                 year: 2020,
@@ -65,6 +67,7 @@ async function loadVehiculos() {
                 estado: "Disponible"
             },
             {
+                id: "ford-ranger-2019",
                 marca: "Ford",
                 modelo: "Ranger XLT 4x4",
                 year: 2019,
@@ -81,6 +84,7 @@ async function loadVehiculos() {
                 estado: "Disponible"
             },
             {
+                id: "chevrolet-onix-2017",
                 marca: "Chevrolet",
                 modelo: "Onix LTZ",
                 year: 2017,
@@ -97,6 +101,7 @@ async function loadVehiculos() {
                 estado: "Disponible"
             },
             {
+                id: "nissan-kicks-2021",
                 marca: "Nissan",
                 modelo: "Kicks Exclusive",
                 year: 2021,
@@ -113,6 +118,7 @@ async function loadVehiculos() {
                 estado: "Disponible"
             },
             {
+                id: "volkswagen-gol-2016",
                 marca: "Volkswagen",
                 modelo: "Gol Trend",
                 year: 2016,
@@ -129,6 +135,7 @@ async function loadVehiculos() {
                 estado: "Disponible"
             },
             {
+                id: "hyundai-tucson-2019",
                 marca: "Hyundai",
                 modelo: "Tucson Limited",
                 year: 2019,
@@ -177,9 +184,9 @@ async function loadVehiculos() {
                         <div class="precio-principal">Gs. ${v.precio}</div>
                         <div class="precio-secundario">≈ USD ${v.precio_usd}</div>
                     </div>
-                    <button class="btn-consultar" data-vehiculo="${v.marca} ${v.modelo} ${v.year}">
-                        💬 Consultar por WhatsApp
-                    </button>
+                    <a href="vehiculo.html?id=${v.id}" class="btn-consultar">
+                        Ver Detalles →
+                    </a>
                 </div>
             </div>
         `).join('');
@@ -188,18 +195,6 @@ async function loadVehiculos() {
         const vehiculoCards = document.querySelectorAll('.vehiculo-card');
         vehiculoCards.forEach(card => {
             card.classList.add('visible');
-        });
-
-        // Event listeners para botones de consulta
-        document.querySelectorAll('.btn-consultar').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const vehiculo = this.dataset.vehiculo;
-                const whatsapp = '595981234567'; // Cambiar por número real
-                const mensaje = encodeURIComponent(
-                    `Hola! Me interesa el ${vehiculo}. ¿Podrían darme más información?`
-                );
-                window.open(`https://wa.me/${whatsapp}?text=${mensaje}`, '_blank');
-            });
         });
 
         // Filtros
