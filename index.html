@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruggieri Cars | Compra, Venta y Reparación de Autos Usados en Paraguay</title>
+    <meta name="description" content="Ruggieri Cars - Negocio familiar de compra, venta y reparación de autos usados en Paraguay. Amplio catálogo, financiación disponible y garantía.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                RUGGIERI <span class="logo-accent">CARS</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#vehiculos">Vehículos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🇵🇾 Negocio Familiar en Paraguay</div>
+            <h1 class="hero-title">
+                TU PRÓXIMO AUTO<br>
+                <span class="highlight">TE ESTÁ ESPERANDO</span>
+            </h1>
+            <p class="hero-subtitle">
+                Más de 15 años de experiencia en compra, venta y reparación de vehículos usados.
+                Confianza, calidad y el mejor servicio para toda la familia.
+            </p>
+            <div class="hero-cta">
+                <a href="#vehiculos" class="btn-primary">Ver Vehículos Disponibles</a>
+                <a href="#contacto" class="btn-secondary">Contáctanos</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Autos Vendidos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Garantía</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="nosotros">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Quiénes Somos</div>
+                <h2 class="section-title">Un Negocio Familiar de Confianza</h2>
+                <p class="section-subtitle">Desde hace más de 15 años, la familia Ruggieri se dedica con pasión al mercado automotriz en Paraguay</p>
+            </div>
+            <div class="nosotros-content">
+                <div class="nosotros-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=85" alt="Ruggieri Cars - Negocio Familiar">
+                </div>
+                <div class="nosotros-text fade-in">
+                    <h3>Tradición Familiar, Servicio Profesional</h3>
+                    <p>En Ruggieri Cars, no solo vendemos autos: construimos relaciones de confianza. Somos un negocio familiar que entiende la importancia de cada compra, porque sabemos que un auto es más que transporte, es parte de tu día a día.</p>
+                    <p>Nuestro compromiso es ofrecerte vehículos usados de calidad, previamente inspeccionados y con toda la documentación en regla. Además, contamos con taller propio para reparaciones y mantenimiento.</p>
+                    
+                    <div class="valores-grid">
+                        <div class="valor-item">
+                            <div class="valor-icon">✓</div>
+                            <h4>Transparencia</h4>
+                            <p>Información clara sobre el estado de cada vehículo</p>
+                        </div>
+                        <div class="valor-item">
+                            <div class="valor-icon">✓</div>
+                            <h4>Garantía</h4>
+                            <p>Todos nuestros autos incluyen garantía escrita</p>
+                        </div>
+                        <div class="valor-item">
+                            <div class="valor-icon">✓</div>
+                            <h4>Financiación</h4>
+                            <p>Opciones de pago flexibles para tu comodidad</p>
+                        </div>
+                        <div class="valor-item">
+                            <div class="valor-icon">✓</div>
+                            <h4>Servicio Post-Venta</h4>
+                            <p>Taller propio para mantenimiento y reparaciones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehículos Section -->
+    <section id="vehiculos" class="vehiculos">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Catálogo Actualizado</div>
+                <h2 class="section-title">Vehículos Disponibles</h2>
+                <p class="section-subtitle">Descubre nuestra selección de autos usados, revisados y garantizados</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="vehiculos-filters fade-in">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="sedan">Sedán</button>
+                <button class="filter-btn" data-filter="suv">SUV</button>
+                <button class="filter-btn" data-filter="pickup">Pick-Up</button>
+            </div>
+
+            <!-- Grid de Vehículos -->
+            <div class="vehiculos-grid" id="vehiculosGrid">
+                <!-- Los vehículos se cargarán dinámicamente desde Decap CMS -->
+                <!-- Ejemplos estáticos para demo -->
+            </div>
+
+            <div class="cta-center fade-in" style="margin-top: 4rem;">
+                <a href="#contacto" class="btn-primary">¿No encontraste lo que buscas? Contáctanos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Lo Que Ofrecemos</div>
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Soluciones completas para todas tus necesidades automotrices</p>
+            </div>
+
+            <div class="servicios-grid">
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">🚗</div>
+                    <h3>Venta de Autos Usados</h3>
+                    <p>Amplio catálogo de vehículos usados en excelente estado, revisados mecánicamente y con garantía. Financiación disponible con las mejores tasas del mercado.</p>
+                </div>
+
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">💰</div>
+                    <h3>Compra de tu Auto</h3>
+                    <p>¿Querés vender tu auto? Te ofrecemos la mejor tasación del mercado. Pago inmediato y trámites incluidos. Aceptamos autos como parte de pago.</p>
+                </div>
+
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">🔧</div>
+                    <h3>Taller Mecánico</h3>
+                    <p>Servicio completo de reparación y mantenimiento. Mecánicos certificados, repuestos originales y diagnóstico computarizado. Presupuesto sin cargo.</p>
+                </div>
+
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">📋</div>
+                    <h3>Asesoramiento Completo</h3>
+                    <p>Te ayudamos en todos los trámites: transferencia, verificación policial, seguro y financiación. Acompañamiento personalizado en todo el proceso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Consejos y Novedades</div>
+                <h2 class="section-title">Blog Automotriz</h2>
+                <p class="section-subtitle">Tips, guías y noticias del mundo del automóvil</p>
+            </div>
+
+            <div class="blog-grid" id="blogGrid">
+                <!-- Los posts se cargarán dinámicamente desde Decap CMS -->
+            </div>
+
+            <div class="cta-center fade-in" style="margin-top: 3rem;">
+                <a href="blog.html" class="btn-secondary">Ver Todos los Artículos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Hablemos</div>
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Estamos para ayudarte. Consultanos sin compromiso</p>
+            </div>
+
+            <div class="contacto-container">
+                <div class="contacto-info fade-in">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📍</div>
+                        <div class="contacto-details">
+                            <h4>Ubicación</h4>
+                            <p>Asunción, Paraguay<br>Av. Principal 1234</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📱</div>
+                        <div class="contacto-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/595981234567">+595 981 234 567</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">✉️</div>
+                        <div class="contacto-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@ruggiericars.com">info@ruggiericars.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">⏰</div>
+                        <div class="contacto-details">
+                            <h4>Horarios</h4>
+                            <p>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 8:00 - 13:00</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-social">
+                        <h4>Seguinos en Redes</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="Instagram">📷</a>
+                            <a href="#" class="social-link" title="WhatsApp">💬</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-form-wrapper fade-in">
+                    <form id="contactForm" class="contacto-form">
+                        <h3>Consultanos por WhatsApp</h3>
+                        <p class="form-subtitle">Completá el formulario y te contactamos al instante</p>
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono / WhatsApp *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehiculo">Vehículo de Interés</label>
+                            <select id="vehiculo" name="vehiculo">
+                                <option value="">Consulta General</option>
+                                <!-- Se llenarán dinámicamente -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            💬 Enviar por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">🚗</span>
+                    RUGGIERI <span class="logo-accent">CARS</span>
+                </div>
+                <p class="footer-text">Negocio familiar de confianza desde hace más de 15 años. Tu próximo auto te está esperando.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#vehiculos">Vehículos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#vehiculos">Venta de Autos</a></li>
+                        <li><a href="#servicios">Compra de Autos</a></li>
+                        <li><a href="#servicios">Taller Mecánico</a></li>
+                        <li><a href="#servicios">Financiación</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Asunción, Paraguay</li>
+                        <li>📱 +595 981 234 567</li>
+                        <li>✉️ info@ruggiericars.com</li>
+                        <li>⏰ Lun-Vie: 8:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ruggieri Cars. Todos los derechos reservados. | Hecho con ❤️ en Paraguay</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cms-loader.js"></script>
+</body>
+</html>

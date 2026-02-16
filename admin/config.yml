@@ -1,0 +1,72 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Configuración para desarrollo local
+local_backend: true
+
+# Configuración de medios
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+# Colecciones
+collections:
+  # Colección de Vehículos
+  - name: "vehiculos"
+    label: "Vehículos"
+    folder: "_vehiculos"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Marca", name: "marca", widget: "string", required: true}
+      - {label: "Modelo", name: "modelo", widget: "string", required: true}
+      - {label: "Año", name: "year", widget: "number", required: true, min: 1990, max: 2026}
+      - {label: "Precio (Gs)", name: "precio", widget: "number", required: true}
+      - {label: "Precio USD", name: "precio_usd", widget: "number", required: false}
+      - {label: "Tipo", name: "tipo", widget: "select", options: ["sedan", "suv", "pickup", "hatchback", "coupe"], required: true}
+      - {label: "Kilometraje", name: "kilometraje", widget: "number", required: true}
+      - {label: "Combustible", name: "combustible", widget: "select", options: ["Nafta", "Diésel", "GNC", "Híbrido", "Eléctrico"], required: true}
+      - {label: "Transmisión", name: "transmision", widget: "select", options: ["Manual", "Automática"], required: true}
+      - {label: "Color", name: "color", widget: "string", required: true}
+      - {label: "Descripción", name: "descripcion", widget: "text", required: true}
+      - {label: "Características", name: "caracteristicas", widget: "list", required: false}
+      - {label: "Imagen Principal", name: "imagen_principal", widget: "image", required: true}
+      - {label: "Galería de Imágenes", name: "galeria", widget: "list", field: {label: "Imagen", name: "imagen", widget: "image"}, required: false}
+      - {label: "Destacado", name: "destacado", widget: "boolean", default: false, required: false}
+      - {label: "Estado", name: "estado", widget: "select", options: ["Disponible", "Reservado", "Vendido"], default: "Disponible", required: true}
+      - {label: "Fecha de Publicación", name: "fecha", widget: "datetime", required: true}
+
+  # Colección de Blog Posts
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string", required: true}
+      - {label: "Fecha de Publicación", name: "date", widget: "datetime", required: true}
+      - {label: "Autor", name: "author", widget: "string", default: "Ruggieri Cars", required: true}
+      - {label: "Categoría", name: "category", widget: "select", options: ["Consejos", "Mantenimiento", "Noticias", "Guías de Compra", "Tendencias"], required: true}
+      - {label: "Imagen Destacada", name: "featured_image", widget: "image", required: true}
+      - {label: "Extracto", name: "excerpt", widget: "text", required: true}
+      - {label: "Contenido", name: "body", widget: "markdown", required: true}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "SEO - Meta Description", name: "meta_description", widget: "text", required: false}
+      - {label: "Publicado", name: "published", widget: "boolean", default: true, required: false}
+
+  # Configuración del Sitio (Singleton)
+  - name: "settings"
+    label: "Configuración del Sitio"
+    files:
+      - label: "Información General"
+        name: "general"
+        file: "_data/settings.yml"
+        fields:
+          - {label: "Nombre del Negocio", name: "site_name", widget: "string"}
+          - {label: "Descripción", name: "site_description", widget: "text"}
+          - {label: "Teléfono WhatsApp", name: "whatsapp", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Dirección", name: "address", widget: "text"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+          - {label: "Horario de Atención", name: "horario", widget: "text"}

@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportes REMY | Arriendo de Camiones y Plataformas - Puerto Cabello</title>
+    <meta name="description" content="Arriendo profesional de camiones de carga pesada y plataformas para contenedores en Puerto Cabello, Venezuela. Soluciones logísticas confiables.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-oscuro: #0A2540;
+            --azul-profundo: #1a3a5a;
+            --gris-metalico: #7A8B9C;
+            --amarillo-industrial: #FDB927;
+            --gris-claro: #E8EBED;
+            --blanco: #FFFFFF;
+            --negro: #0D1B2A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--negro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(10, 37, 64, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--blanco);
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .logo span {
+            color: var(--amarillo-industrial);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--amarillo-industrial);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--amarillo-industrial);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--amarillo-industrial);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--blanco);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.92), rgba(26, 58, 90, 0.85)), 
+                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=85') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 50px,
+                rgba(253, 185, 39, 0.03) 50px,
+                rgba(253, 185, 39, 0.03) 51px
+            );
+            animation: slideGrid 20s linear infinite;
+        }
+
+        @keyframes slideGrid {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(51px); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(253, 185, 39, 0.15);
+            color: var(--amarillo-industrial);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--amarillo-industrial);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--blanco);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero h1 span {
+            color: var(--amarillo-industrial);
+            display: block;
+            font-size: 3.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gris-claro);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            font-weight: 300;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--amarillo-industrial);
+            color: var(--negro);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 30px rgba(253, 185, 39, 0.3);
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(253, 185, 39, 0.4);
+        }
+
+        /* Secciones */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(253, 185, 39, 0.1);
+            color: var(--amarillo-industrial);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3rem;
+            color: var(--azul-oscuro);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--gris-metalico);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Nosotros */
+        #nosotros {
+            background: var(--gris-claro);
+        }
+
+        .nosotros-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .nosotros-text h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.2rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nosotros-text p {
+            color: var(--gris-metalico);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .valor-item {
+            background: var(--blanco);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .valor-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .valor-item h4 {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--azul-oscuro);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .valor-item h4::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--amarillo-industrial);
+            border-radius: 50%;
+        }
+
+        .valor-item p {
+            color: var(--gris-metalico);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .nosotros-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .nosotros-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nosotros-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.3), transparent);
+        }
+
+        /* Servicios */
+        #servicios {
+            background: var(--blanco);
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .servicio-card {
+            background: linear-gradient(145deg, #ffffff, #f5f7fa);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--amarillo-industrial), var(--azul-oscuro));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-color: var(--amarillo-industrial);
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--amarillo-industrial), #ffca3a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(253, 185, 39, 0.3);
+        }
+
+        .servicio-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.6rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .servicio-card p {
+            color: var(--gris-metalico);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Flota */
+        #flota {
+            background: var(--azul-oscuro);
+            color: var(--blanco);
+        }
+
+        #flota .section-badge {
+            background: rgba(253, 185, 39, 0.2);
+        }
+
+        #flota .section-header h2 {
+            color: var(--blanco);
+        }
+
+        #flota .section-header p {
+            color: var(--gris-claro);
+        }
+
+        .flota-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-button {
+            padding: 1rem 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            color: var(--blanco);
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .tab-button.active {
+            background: var(--amarillo-industrial);
+            color: var(--negro);
+            border-color: var(--amarillo-industrial);
+        }
+
+        .tab-button:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--amarillo-industrial);
+        }
+
+        .flota-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .flota-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .flota-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(253, 185, 39, 0.2);
+            border-color: var(--amarillo-industrial);
+        }
+
+        .flota-image {
+            height: 220px;
+            background: linear-gradient(135deg, rgba(26, 58, 90, 0.8), rgba(10, 37, 64, 0.8)), 
+                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80') center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flota-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(10, 37, 64, 0.8));
+        }
+
+        .flota-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--amarillo-industrial);
+            color: var(--negro);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .flota-info {
+            padding: 2rem;
+        }
+
+        .flota-info h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--blanco);
+            font-weight: 700;
+        }
+
+        .flota-tipo {
+            color: var(--amarillo-industrial);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flota-info p {
+            color: var(--gris-claro);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .flota-specs {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .spec-item {
+            background: rgba(253, 185, 39, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--amarillo-industrial);
+            font-weight: 500;
+        }
+
+        /* Contacto */
+        #contacto {
+            background: var(--gris-claro);
+        }
+
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contacto-info {
+            background: var(--azul-oscuro);
+            padding: 3rem;
+            border-radius: 20px;
+            color: var(--blanco);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .contacto-info h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--amarillo-industrial);
+            font-weight: 700;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contacto-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(253, 185, 39, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--amarillo-industrial);
+            flex-shrink: 0;
+        }
+
+        .contacto-details h4 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .contacto-details p {
+            color: var(--gris-claro);
+            line-height: 1.6;
+        }
+
+        .contacto-details a {
+            color: var(--amarillo-industrial);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contacto-details a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(253, 185, 39, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--amarillo-industrial);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--amarillo-industrial);
+            color: var(--negro);
+            transform: translateY(-3px);
+        }
+
+        /* Formulario */
+        .contacto-form {
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--azul-oscuro);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--amarillo-industrial);
+            background: var(--blanco);
+            box-shadow: 0 0 0 3px rgba(253, 185, 39, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 30px rgba(10, 37, 64, 0.2);
+        }
+
+        .submit-button:hover {
+            background: var(--amarillo-industrial);
+            color: var(--negro);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(253, 185, 39, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-logo span {
+            color: var(--amarillo-industrial);
+        }
+
+        .footer-text {
+            color: var(--gris-metalico);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gris-claro);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--amarillo-industrial);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            color: var(--gris-metalico);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero h1 span {
+                font-size: 2.8rem;
+            }
+
+            .nosotros-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .servicios-grid,
+            .flota-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(10, 37, 64, 0.98);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(7px, 7px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 span {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .servicios-grid,
+            .flota-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .valores-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flota-tabs {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* Animaciones de scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">TRANSPORTES <span>REMY</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#flota">Flota</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Puerto Cabello • Venezuela</div>
+            <h1>
+                Arriendo de Camiones y Plataformas
+                <span>para Transporte de Carga Pesada</span>
+            </h1>
+            <p>Soluciones profesionales de transporte en Puerto Cabello y toda Venezuela. Flota moderna, servicio confiable y experiencia comprobada en el sector logístico.</p>
+            <a href="#contacto" class="cta-button">Cotiza tu Arriendo</a>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Sobre Nosotros</div>
+                <h2>Líderes en Transporte de Carga Pesada</h2>
+                <p>Más de una década de experiencia brindando soluciones logísticas profesionales</p>
+            </div>
+
+            <div class="nosotros-content">
+                <div class="nosotros-text fade-in">
+                    <h3>Transportes REMY: Confianza en Movimiento</h3>
+                    <p>Somos una empresa venezolana especializada en el arriendo de camiones de carga pesada y plataformas para el transporte de contenedores. Con sede en Puerto Cabello, Estado Carabobo, operamos a nivel nacional ofreciendo soluciones logísticas integrales para empresas de todos los sectores.</p>
+                    <p>Nuestra flota moderna y mantenimiento riguroso nos permiten garantizar puntualidad, seguridad y eficiencia en cada servicio. Contamos con personal altamente capacitado y una trayectoria que nos respalda como aliados estratégicos en la cadena logística de nuestros clientes.</p>
+                    
+                    <div class="valores-grid">
+                        <div class="valor-item">
+                            <h4>Experiencia</h4>
+                            <p>Más de 10 años en el sector de transporte de carga pesada</p>
+                        </div>
+                        <div class="valor-item">
+                            <h4>Puntualidad</h4>
+                            <p>Cumplimiento estricto de tiempos de entrega</p>
+                        </div>
+                        <div class="valor-item">
+                            <h4>Seguridad</h4>
+                            <p>Flota con mantenimiento preventivo y correctivo</p>
+                        </div>
+                        <div class="valor-item">
+                            <h4>Cobertura</h4>
+                            <p>Servicio en Puerto Cabello y toda Venezuela</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nosotros-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=85" alt="Transportes REMY - Flota de Camiones">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Servicios</div>
+                <h2>Soluciones Logísticas Completas</h2>
+                <p>Servicios profesionales adaptados a las necesidades de tu empresa</p>
+            </div>
+
+            <div class="servicios-grid">
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">🚛</div>
+                    <h3>Arriendo de Camiones de Carga Pesada</h3>
+                    <p>Flota moderna de camiones de alta capacidad para el transporte de carga pesada. Ideales para operaciones industriales, construcción y distribución a nivel nacional. Unidades con tecnología de punta y mantenimiento garantizado.</p>
+                </div>
+
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">📦</div>
+                    <h3>Arriendo de Plataformas para Contenedores</h3>
+                    <p>Plataformas especializadas para el transporte seguro de contenedores de 20', 40' y cargas sobredimensionadas. Estructura reforzada de acero y sistemas de amarre certificados para máxima seguridad en trayectos largos.</p>
+                </div>
+
+                <div class="servicio-card fade-in">
+                    <div class="servicio-icon">⚙️</div>
+                    <h3>Logística y Asistencia Técnica</h3>
+                    <p>Asesoría logística integral, planificación de rutas optimizadas, coordinación de operaciones portuarias y asistencia técnica 24/7. Soluciones personalizadas para cada proyecto con seguimiento en tiempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flota -->
+    <section id="flota">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Nuestra Flota</div>
+                <h2>Equipos de Primera Calidad</h2>
+                <p>Camiones y plataformas modernos para garantizar el éxito de tu operación</p>
+            </div>
+
+            <div class="flota-tabs fade-in">
+                <button class="tab-button active" data-tab="camiones">Camiones</button>
+                <button class="tab-button" data-tab="plataformas">Plataformas</button>
+            </div>
+
+            <div class="flota-grid" id="camiones-grid">
+                <div class="flota-card fade-in">
+                    <div class="flota-image">
+                        <div class="flota-badge">Disponible</div>
+                    </div>
+                    <div class="flota-info">
+                        <h3>Volvo FH16</h3>
+                        <div class="flota-tipo">Camión de Alta Capacidad</div>
+                        <p>Potencia superior para cargas pesadas, ideal para trayectos de larga distancia con máxima eficiencia de combustible y confort para el operador.</p>
+                        <div class="flota-specs">
+                            <span class="spec-item">750 HP</span>
+                            <span class="spec-item">45 Ton</span>
+                            <span class="spec-item">Euro 6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flota-card fade-in">
+                    <div class="flota-image">
+                        <div class="flota-badge">Disponible</div>
+                    </div>
+                    <div class="flota-info">
+                        <h3>Mack Granite</h3>
+                        <div class="flota-tipo">Camión de Larga Distancia</div>
+                        <p>Rendimiento confiable y durabilidad comprobada. Diseñado para operaciones exigentes con tecnología de vanguardia en seguridad y control.</p>
+                        <div class="flota-specs">
+                            <span class="spec-item">605 HP</span>
+                            <span class="spec-item">40 Ton</span>
+                            <span class="spec-item">6x4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flota-card fade-in">
+                    <div class="flota-image">
+                        <div class="flota-badge">Disponible</div>
+                    </div>
+                    <div class="flota-info">
+                        <h3>Iveco Stralis</h3>
+                        <div class="flota-tipo">Camión Eficiente</div>
+                        <p>Máxima eficiencia y bajo consumo de combustible. Equipado con sistemas inteligentes de gestión de carga y asistencia al conductor.</p>
+                        <div class="flota-specs">
+                            <span class="spec-item">560 HP</span>
+                            <span class="spec-item">38 Ton</span>
+                            <span class="spec-item">Hi-Way</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flota-grid" id="plataformas-grid" style="display: none;">
+                <div class="flota-card fade-in">
+                    <div class="flota-image">
+                        <div class="flota-badge">Disponible</div>
+                    </div>
+                    <div class="flota-info">
+                        <h3>Porta Contenedor 40'</h3>
+                        <div class="flota-tipo">Plataforma Reforzada</div>
+                        <p>Estructura reforzada de acero de alta resistencia. Sistemas de amarre certificados para transporte seguro de contenedores de 40 pies.</p>
+                        <div class="flota-specs">
+                            <span class="spec-item">40 Pies</span>
+                            <span class="spec-item">Twist Locks</span>
+                            <span class="spec-item">45 Ton</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flota-card fade-in">
+                    <div class="flota-image">
+                        <div class="flota-badge">Disponible</div>
+                    </div>
+                    <div class="flota-info">
+                        <h3>Plataforma Lowboy</h3>
+                        <div class="flota-tipo">Carga Sobredimensionada</div>
+                        <p>Ideal para transporte de maquinaria pesada y equipos industriales. Rampa hidráulica y sistema de nivelación para carga segura.</p>
+                        <div class="flota-specs">
+                            <span class="spec-item">60 Ton</span>
+                            <span class="spec-item">Hidráulica</span>
+                            <span class="spec-item">Extensible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flota-card fade-in">
+                    <div class="flota-image">
+                        <div class="flota-badge">Disponible</div>
+                    </div>
+                    <div class="flota-info">
+                        <h3>Plataforma Extensible</h3>
+                        <div class="flota-tipo">Versátil y Adaptable</div>
+                        <p>Ajustable según tamaño de contenedores (20' a 40'). Versatilidad máxima para diferentes tipos de carga con certificación internacional.</p>
+                        <div class="flota-specs">
+                            <span class="spec-item">20-40'</span>
+                            <span class="spec-item">Telescópica</span>
+                            <span class="spec-item">50 Ton</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Contacto</div>
+                <h2>Solicita tu Cotización</h2>
+                <p>Estamos listos para atender tus necesidades de transporte</p>
+            </div>
+
+            <div class="contacto-container">
+                <div class="contacto-info fade-in">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📱</div>
+                        <div class="contacto-details">
+                            <h4>Teléfono / WhatsApp</h4>
+                            <p><a href="https://wa.me/584121234567">+58 (412) 123-4567</a></p>
+                            <p><a href="tel:+582423456789">+58 (242) 345-6789</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">✉️</div>
+                        <div class="contacto-details">
+                            <h4>Email</h4>
+                            <p><a href="/cdn-cgi/l/email-protection#a4c7cbcad0c5c7d0cbe4d0d6c5cad7d4cbd6d0c1d7d6c1c9dd8ac7cbc9"><span class="__cf_email__" data-cfemail="85e6eaebf1e4e6f1eac5f1f7e4ebf6f5eaf7f1e0f6f7e0e8fcabe6eae8">[email&#160;protected]</span></a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#b6c0d3d8c2d7c5f6c2c4d7d8c5c6d9c4c2d3c5c4d3dbcf98d5d9db"><span class="__cf_email__" data-cfemail="fa8c9f948e9b89ba8e889b94898a95888e9f89889f9783d4999597">[email&#160;protected]</span></a></p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📍</div>
+                        <div class="contacto-details">
+                            <h4>Ubicación</h4>
+                            <p>Puerto Cabello<br>Estado Carabobo<br>Venezuela</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">🕐</div>
+                        <div class="contacto-details">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 7:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 2:00 PM<br>Emergencias 24/7</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">📘</a>
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="https://wa.me/584121234567" class="social-link" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+
+                <div class="contacto-form fade-in">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" id="empresa" name="empresa">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje / Detalles del Servicio *</label>
+                            <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos sobre tu proyecto y qué tipo de vehículo necesitas..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Solicitar Cotización</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TRANSPORTES <span>REMY</span></div>
+            <p class="footer-text">Soluciones profesionales de transporte de carga pesada en Venezuela</p>
+            
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#flota">Flota</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Transportes REMY. Todos los derechos reservados. | Puerto Cabello, Venezuela</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Menu toggle para móviles
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Tabs de flota
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const camionesGrid = document.getElementById('camiones-grid');
+        const plataformasGrid = document.getElementById('plataformas-grid');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                if (button.dataset.tab === 'camiones') {
+                    camionesGrid.style.display = 'grid';
+                    plataformasGrid.style.display = 'none';
+                } else {
+                    camionesGrid.style.display = 'none';
+                    plataformasGrid.style.display = 'grid';
+                }
+            });
+        });
+
+        // Animaciones de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const empresa = document.getElementById('empresa').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Crear mensaje de WhatsApp
+            const whatsappMessage = `*Solicitud de Cotización - Transportes REMY*%0A%0A*Nombre:* ${nombre}%0A*Empresa:* ${empresa || 'No especificada'}%0A*Teléfono:* ${telefono}%0A*Email:* ${email}%0A%0A*Mensaje:*%0A${mensaje}`;
+            
+            // Abrir WhatsApp
+            window.open(`https://wa.me/584121234567?text=${whatsappMessage}`, '_blank');
+            
+            // Limpiar formulario
+            e.target.reset();
+            
+            alert('¡Gracias por contactarnos! Te estamos redirigiendo a WhatsApp para completar tu solicitud.');
+        });
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.p
