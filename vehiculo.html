@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Vehículo - Ruggieri Cars</title>
+    <meta name="description" content="Detalle del vehículo - Ruggieri Cars">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        .vehiculo-detail {
+            padding: 8rem 2rem 5rem;
+            background: var(--gris-claro);
+        }
+
+        .vehiculo-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--rojo);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: gap 0.3s;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .vehiculo-detail-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .vehiculo-gallery {
+            background: var(--blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .vehiculo-gallery img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .vehiculo-detail-info {
+            background: var(--blanco);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .vehiculo-detail-badge {
+            display: inline-block;
+            background: var(--rojo);
+            color: var(--blanco);
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .vehiculo-detail-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--negro);
+            margin-bottom: 0.5rem;
+        }
+
+        .vehiculo-detail-year {
+            color: var(--gris);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .vehiculo-detail-precio {
+            background: var(--gris-claro);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .precio-principal {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rojo);
+            margin-bottom: 0.3rem;
+        }
+
+        .precio-secundario {
+            color: var(--gris);
+            font-size: 1rem;
+        }
+
+        .vehiculo-detail-specs {
+            margin-bottom: 2rem;
+        }
+
+        .vehiculo-detail-specs h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: var(--gris-claro);
+            border-radius: 5px;
+        }
+
+        .spec-icon {
+            font-size: 1.3rem;
+        }
+
+        .spec-content {
+            flex: 1;
+        }
+
+        .spec-label {
+            font-size: 0.8rem;
+            color: var(--gris);
+            margin-bottom: 0.2rem;
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: var(--negro);
+        }
+
+        .vehiculo-detail-description {
+            margin-bottom: 2rem;
+        }
+
+        .vehiculo-detail-description h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .vehiculo-detail-description p {
+            color: var(--gris);
+            line-height: 1.8;
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            padding: 1.2rem;
+            background: #25D366;
+            color: var(--blanco);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        @media(max-width: 768px) {
+            .vehiculo-detail {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .vehiculo-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .vehiculo-gallery img {
+                height: 300px;
+            }
+
+            .vehiculo-detail-info {
+                padding: 1.5rem;
+            }
+
+            .vehiculo-detail-title {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                RUGGIERI <span class="logo-accent">CARS</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#vehiculos">Vehículos</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vehiculo Detail -->
+    <section class="vehiculo-detail">
+        <div class="vehiculo-detail-container">
+            <a href="index.html#vehiculos" class="back-link">← Volver al catálogo</a>
+
+            <div class="vehiculo-detail-grid">
+                <div class="vehiculo-gallery">
+                    <img id="vehiculo-imagen" src="" alt="Vehículo">
+                </div>
+
+                <div class="vehiculo-detail-info">
+                    <div id="vehiculo-badge-container"></div>
+                    <h1 class="vehiculo-detail-title" id="vehiculo-titulo"></h1>
+                    <div class="vehiculo-detail-year" id="vehiculo-year"></div>
+
+                    <div class="vehiculo-detail-precio">
+                        <div class="precio-principal" id="vehiculo-precio-gs"></div>
+                        <div class="precio-secundario" id="vehiculo-precio-usd"></div>
+                    </div>
+
+                    <div class="vehiculo-detail-specs">
+                        <h3>Especificaciones</h3>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <div class="spec-icon">🔧</div>
+                                <div class="spec-content">
+                                    <div class="spec-label">Kilometraje</div>
+                                    <div class="spec-value" id="spec-km"></div>
+                                </div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">⛽</div>
+                                <div class="spec-content">
+                                    <div class="spec-label">Combustible</div>
+                                    <div class="spec-value" id="spec-combustible"></div>
+                                </div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">⚙️</div>
+                                <div class="spec-content">
+                                    <div class="spec-label">Transmisión</div>
+                                    <div class="spec-value" id="spec-transmision"></div>
+                                </div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">🎨</div>
+                                <div class="spec-content">
+                                    <div class="spec-label">Color</div>
+                                    <div class="spec-value" id="spec-color"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehiculo-detail-description">
+                        <h3>Descripción</h3>
+                        <p id="vehiculo-descripcion"></p>
+                    </div>
+
+                    <button class="btn-whatsapp" id="btn-consultar">
+                        💬 Consultar por WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">🚗</span>
+                    RUGGIERI <span class="logo-accent">CARS</span>
+                </div>
+                <p class="footer-text">Negocio familiar de confianza desde hace más de 15 años. Tu próximo auto te está
+                    esperando.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#vehiculos">Vehículos</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="index.html#vehiculos">Venta de Autos</a></li>
+                        <li><a href="index.html#servicios">Compra de Autos</a></li>
+                        <li><a href="index.html#servicios">Taller Mecánico</a></li>
+                        <li><a href="index.html#servicios">Financiación</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Asunción, Paraguay</li>
+                        <li>📱 +595 981 234 567</li>
+                        <li>✉️ info@ruggiericars.com</li>
+                        <li>⏰ Lun-Vie: 8:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ruggieri Cars. Todos los derechos reservados. | Hecho con ❤️ en Paraguay</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/vehiculo-detail.js"></script>
+
+    <!-- Netlify Identity Confirmation Handler -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+
+            window.netlifyIdentity.on("confirm", user => {
+                console.log("Email confirmed for user:", user.email);
+                alert("¡Email confirmado exitosamente! Serás redirigido al panel de administración.");
+                document.location.href = "/admin/";
+            });
+
+            window.netlifyIdentity.on("error", err => {
+                console.error("Netlify Identity error:", err);
+            });
+        }
+    </script>
+</body>
+
+</html>

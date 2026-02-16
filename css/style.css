@@ -168,11 +168,15 @@ section{padding:5rem 2rem}
 .nav-links{display:none;position:fixed;top:70px;left:0;right:0;flex-direction:column;background:var(--blanco);padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,.1);gap:1.5rem}
 .nav-links.active{display:flex}
 .menu-toggle{display:flex}
-section{padding:3rem 1.5rem}
-.hero{min-height:500px}
-.hero-content{padding:0 1.5rem}
-.hero-title{font-size:2.5rem}
-.hero-stats{grid-template-columns:1fr;gap:1rem;position:static;margin-top:2rem}
+section{padding:3rem 1rem}
+.hero{min-height:100vh;height:auto;padding-top:80px}
+.hero-content{padding:0 16px}
+.hero-badge{margin-bottom:1rem;font-size:.85rem;padding:.4rem 1.2rem}
+.hero-title{font-size:2.2rem;margin-bottom:1rem}
+.hero-subtitle{font-size:1rem;margin-bottom:2rem}
+.hero-cta{gap:1rem;margin-bottom:2rem}
+.btn-primary,.btn-secondary{padding:.85rem 1.5rem;font-size:.9rem}
+.hero-stats{grid-template-columns:1fr;gap:1rem;position:static;margin-top:2rem;left:16px;right:16px}
 .vehiculos-grid,.servicios-grid,.blog-grid{grid-template-columns:1fr}
 .valores-grid{grid-template-columns:1fr}
 .footer-content,.footer-links{grid-template-columns:1fr}
