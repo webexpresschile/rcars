@@ -4,7 +4,7 @@ modelo: Spark Gt
 year: 2020
 precio: 12000000
 precio_usd: 10000
-tipo: hatchback
+tipo: sedan
 kilometraje: 50000
 combustible: Nafta
 transmision: Manual
